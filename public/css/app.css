@@ -195,6 +195,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+body {
+  background: #ccc;
+}
 .switchboard {
   margin: 0 auto;
   -webkit-border-radius: 24px;
@@ -209,8 +212,9 @@ table {
   background: -o-linear-gradient(top, #666666, #aaaaaa, #666666);
   background: linear-gradient(top, #666666, #aaaaaa, #666666);
   border: 2px solid #000;
-  width: 500px;
+  width: 322px;
   padding: 15px;
+  margin-top: 20px;
 }
 .switchboard::after {
   content: ".";
@@ -225,17 +229,20 @@ table {
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
   border-radius: 12px;
-  background: #aaaaaa;
-  background: -webkit-linear-gradient(top, #aaaaaa, #666666);
-  background: -moz-linear-gradient(top, #aaaaaa, #666666);
-  background: -ms-linear-gradient(top, #aaaaaa, #666666);
-  background: -o-linear-gradient(top, #aaaaaa, #666666);
-  background: linear-gradient(top, #aaaaaa, #666666);
+  background: #aaaacc;
+  background: -webkit-linear-gradient(top, #aaaacc, #666666);
+  background: -moz-linear-gradient(top, #aaaacc, #666666);
+  background: -ms-linear-gradient(top, #aaaacc, #666666);
+  background: -o-linear-gradient(top, #aaaacc, #666666);
+  background: linear-gradient(top, #aaaacc, #666666);
+  -webkit-box-shadow: 0 -20px 20px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 -20px 20px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 -20px 20px rgba(0, 0, 0, 0.2) inset;
   float: left;
   width: 100px;
   height: 100px;
   margin: 5px 5px 0 0;
-  border: 2px solid #606060;
+  border: 2px solid #404040;
 }
 .switch a {
   -webkit-border-radius: 50%;
@@ -243,9 +250,9 @@ table {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4) inset;
-  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4) inset;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4) inset;
+  -webkit-box-shadow: -10px -20px 30px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: -10px -20px 30px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: -10px -20px 30px rgba(0, 0, 0, 0.5) inset;
   border: 1px solid #004;
   display: block;
   width: 90%;
@@ -255,9 +262,12 @@ table {
   overflow: hidden;
   white-space: nowrap;
 }
+.switch:last-child {
+  margin-right: 0;
+}
 .switch.on a {
   background-color: rgba(255, 0, 0, 0.8);
 }
 .switch.off a {
-  background-color: rgba(100, 100, 100, 0.8);
+  background-color: rgba(100, 100, 100, 0.3);
 }

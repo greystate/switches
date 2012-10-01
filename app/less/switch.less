@@ -1,3 +1,5 @@
+@switch_count: 3;
+@switch_width: 100px;
 
 .switchboard {
 	.centered;
@@ -6,25 +8,26 @@
 	.linear-gradient(top, #666, #aaa, #666);
 	
 	border: 2px solid #000;
-	width: 500px;
-//	height: 200px;
+	width: @switch_count * (@switch_width + 4) + (@switch_count - 1) * 5;
 	padding: 15px;
+	margin-top: 20px;
 }
 
 .switch {
 	.border-radius(12px);
-	.linear-gradient(top, #aaa, #666);
+	.linear-gradient(top, #aac, #666);
+	.box-shadow-inset(0, -20px, 20px, rgba(0, 0, 0, 0.2));
 	
 	float: left;
-	width: 100px;
-	height: 100px;
+	width: @switch_width;
+	height: @switch_width;
 	margin: 5px 5px 0 0;
-	border: 2px solid #606060;
+	border: 2px solid #404040;
 
 	
 	a {
 		.border-radius(50%);
-		.box-shadow-inset(0, 0, 20px, rgba(0, 0, 0, 0.4));
+		.box-shadow-inset(-10px, -20px, 30px, rgba(0, 0, 0, 0.5));
 		
 		border: 1px solid #004;
 		display: block;
@@ -36,11 +39,13 @@
 		white-space: nowrap;
 	}
 	
+	&:last-child { margin-right: 0; }
+	
 	&.on {
 		a { background-color: rgba(255, 0, 0, 0.8); }
 	}
 
 	&.off {
-		a { background-color: rgba(100, 100, 100, 0.8); }
+		a { background-color: rgba(100, 100, 100, 0.3); }
 	}
 }
