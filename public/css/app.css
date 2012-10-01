@@ -245,6 +245,11 @@ body {
   border: 2px solid #404040;
 }
 .switch a {
+  -webkit-transition: background-color 1.1s ease;
+  -moz-transition: background-color 1.1s ease;
+  -ms-transition: background-color 1.1s ease;
+  -o-transition: background-color 1.1s ease;
+  transition: background-color 1.1s ease;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -253,7 +258,7 @@ body {
   -webkit-box-shadow: -10px -20px 30px rgba(0, 0, 0, 0.5) inset;
   -moz-box-shadow: -10px -20px 30px rgba(0, 0, 0, 0.5) inset;
   box-shadow: -10px -20px 30px rgba(0, 0, 0, 0.5) inset;
-  border: 1px solid #004;
+  border: 1px solid #003;
   display: block;
   width: 90%;
   height: 90%;
@@ -261,6 +266,28 @@ body {
   text-indent: 100%;
   overflow: hidden;
   white-space: nowrap;
+}
+.switch a:hover {
+  border-color: #334;
+}
+.switch a::after {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 5px #fff;
+  display: block;
+  content: " ";
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  position: relative;
+  left: 25%;
+  opacity: 0.3;
+}
+.switch a:hover::after {
+  opacity: 0.5;
 }
 .switch:last-child {
   margin-right: 0;
