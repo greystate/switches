@@ -14,7 +14,7 @@
       return $('.switchboard').on('click', '.switch a', function() {
         var $sw;
         $sw = $(this).parent();
-        return $sw.toggleClass('on off');
+        $sw.toggleClass('off').toggleClass('on');
       });
     };
 

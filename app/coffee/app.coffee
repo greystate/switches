@@ -9,7 +9,7 @@ class SwitchBoardController
 	setupBoard: () ->
 		$('.switchboard').on 'click', '.switch a', ->
 			$sw = $(this).parent()
-			$sw.toggleClass 'on off'
+			$sw.toggleClass('off').toggleClass('on')
 
 
 # Start everything when the page is ready
