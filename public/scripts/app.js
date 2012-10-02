@@ -15,6 +15,7 @@
         var $sw;
         $sw = $(this).parent();
         $sw.toggleClass('off').toggleClass('on');
+        return false;
       });
     };
 
