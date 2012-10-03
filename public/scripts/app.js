@@ -45,15 +45,15 @@
 
     Switch.prototype.defaults = {
       color: "rgba(255, 0, 0, 0.8)",
-      state: true
+      state: 'on'
     };
 
     Switch.prototype.isOn = function() {
-      return this.get('state') === true;
+      return this.get('state') === 'on';
     };
 
     Switch.prototype.isOff = function() {
-      return this.get('state') === false;
+      return this.get('state') === 'off';
     };
 
     Switch.prototype.toggleState = function() {
