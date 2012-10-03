@@ -56,6 +56,10 @@
       return this.get('state') === false;
     };
 
+    Switch.prototype.toggleState = function() {
+      return this.set('state', !this.isOn());
+    };
+
     return Switch;
 
   })(Backbone.Model);
