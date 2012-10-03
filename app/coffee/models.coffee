@@ -3,8 +3,8 @@ class Switch extends Backbone.Model
 		color: "rgba(255, 0, 0, 0.8)"
 		state: on
 	
-	isOn: -> state is on
-	isOff: -> state is off
+	isOn: -> @get('state') is on
+	isOff: -> @get('state') is off
 
 @app.Switch = Switch
 

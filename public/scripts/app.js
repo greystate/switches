@@ -49,11 +49,11 @@
     };
 
     Switch.prototype.isOn = function() {
-      return state === true;
+      return this.get('state') === true;
     };
 
     Switch.prototype.isOff = function() {
-      return state === false;
+      return this.get('state') === false;
     };
 
     return Switch;
