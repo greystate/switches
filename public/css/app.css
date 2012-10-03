@@ -294,7 +294,7 @@ button {
 .switch a:hover::after {
   opacity: 0.5;
 }
-.switch:last-child {
+.switch:nth-child(3n) {
   margin-right: 0;
 }
 .switch.on a {
