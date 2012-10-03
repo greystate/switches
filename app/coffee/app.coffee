@@ -18,3 +18,4 @@ $ ->
 	app.controller = new SwitchBoardController
 	
 # @codekit-append "models.coffee"
+# @codekit-append "views.coffee"
