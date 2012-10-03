@@ -16,3 +16,5 @@ class SwitchBoardController
 # Start everything when the page is ready
 $ ->
 	app.controller = new SwitchBoardController
+	
+# @codekit-append "models.coffee"
