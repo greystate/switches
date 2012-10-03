@@ -12,10 +12,15 @@ class SwitchBoardController
 			$sw.toggleClass('off').toggleClass('on')
 			false
 
+	buildASwitch: () ->
+		switch1 = new app.Switch
+		view1 = new app.SwitchView
+			model: switch1
+		($ '.switchboard').append view1.render().el
 
 # Start everything when the page is ready
 $ ->
 	app.controller = new SwitchBoardController
-	
+
 # @codekit-append "models.coffee"
 # @codekit-append "views.coffee"

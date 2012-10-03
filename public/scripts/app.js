@@ -21,6 +21,15 @@
       });
     };
 
+    SwitchBoardController.prototype.buildASwitch = function() {
+      var switch1, view1;
+      switch1 = new app.Switch;
+      view1 = new app.SwitchView({
+        model: switch1
+      });
+      return ($('.switchboard')).append(view1.render().el);
+    };
+
     return SwitchBoardController;
 
   })();
@@ -86,6 +95,7 @@
 
     SwitchView.prototype.render = function() {
       this.$el.html(this.template(this.model.toJSON()));
+      this.$el.addClass(this.model.get('state').toString());
       return this;
     };
 
