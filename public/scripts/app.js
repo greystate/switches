@@ -23,8 +23,8 @@
 
     SwitchBoardController.prototype.buildASwitch = function() {
       var switch1, view1;
-      switch1 = new app.Switch;
-      view1 = new app.SwitchView({
+      switch1 = new Switch;
+      view1 = new SwitchView({
         model: switch1
       });
       return ($('.switchboard')).append(view1.render().el);
