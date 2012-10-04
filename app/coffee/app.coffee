@@ -16,7 +16,9 @@ class SwitchBoardController
 	# Helper method for showing interaction of model & view
 	buildASwitch: () ->
 		switch1 = new Switch
-		view1 = new SwitchView model: switch1
+		view1 = new SwitchView
+			model: switch1
+			className: "switch #{switch1.get('state')}" 
 		($ '.switchboard').append view1.render().el
 
 # Start everything when the page is ready
