@@ -1,4 +1,7 @@
 class SwitchView extends Backbone.View
+	initialize: ->
+		@model.on 'change:state', @stateChanged
+	
 	className: "switch"
 	
 	template: _.template '''
@@ -14,5 +17,8 @@ class SwitchView extends Backbone.View
 		@$el.html @template @model.toJSON()
 		@$el.addClass @model.get 'state'
 		@
+	
+	stateChanged: (theSwitch, state) =>
+		@$el.removeClass(theSwitch.previous('state')).addClass(state)
 
 @app.SwitchView = SwitchView
