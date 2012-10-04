@@ -3,15 +3,6 @@
 
 # Main controller for the page's functions
 class SwitchBoardController
-	constructor: () ->
-		@setupBoard()
-	
-	# Set up click events in board
-	setupBoard: () ->
-		$('.switchboard').on 'click', '.switch a', ->
-			$sw = ($ this).parent()
-			$sw.toggleClass('off').toggleClass('on')
-			false
 
 	# Helper method for showing interaction of model & view
 	buildASwitch: () ->
