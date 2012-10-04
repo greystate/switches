@@ -7,7 +7,7 @@ class SwitchView extends Backbone.View
 
 	render: ->
 		@$el.html @template @model.toJSON()
-		@$el.addClass @model.get('state').toString()
+		@$el.addClass @model.get('state')
 		@
 
 @app.SwitchView = SwitchView
