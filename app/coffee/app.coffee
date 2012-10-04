@@ -9,7 +9,7 @@ class SwitchBoardController
 	# Set up click events in board
 	setupBoard: () ->
 		$('.switchboard').on 'click', '.switch a', ->
-			$sw = $(this).parent()
+			$sw = ($ this).parent()
 			$sw.toggleClass('off').toggleClass('on')
 			false
 

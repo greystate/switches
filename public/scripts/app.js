@@ -15,7 +15,7 @@
     SwitchBoardController.prototype.setupBoard = function() {
       return $('.switchboard').on('click', '.switch a', function() {
         var $sw;
-        $sw = $(this).parent();
+        $sw = ($(this)).parent();
         $sw.toggleClass('off').toggleClass('on');
         return false;
       });
