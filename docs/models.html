@@ -6,7 +6,7 @@
 	<span class="nv">isOn: </span><span class="o">-&gt;</span> <span class="nx">@get</span><span class="p">(</span><span class="s">&#39;state&#39;</span><span class="p">)</span> <span class="o">is</span> <span class="s">&#39;on&#39;</span>
 	<span class="nv">isOff: </span><span class="o">-&gt;</span> <span class="nx">@get</span><span class="p">(</span><span class="s">&#39;state&#39;</span><span class="p">)</span> <span class="o">is</span> <span class="s">&#39;off&#39;</span>
 	
-	<span class="nv">toggleState: </span><span class="o">-&gt;</span> <span class="nx">@set</span> <span class="s">&#39;state&#39;</span><span class="p">,</span> <span class="o">not</span> <span class="nx">@isOn</span><span class="p">()</span>
+	<span class="nv">toggleState: </span><span class="o">-&gt;</span> <span class="nx">@set</span> <span class="s">&#39;state&#39;</span><span class="p">,</span> <span class="k">if</span> <span class="nx">@isOn</span><span class="p">()</span> <span class="k">then</span> <span class="s">&#39;off&#39;</span> <span class="k">else</span> <span class="s">&#39;on&#39;</span>
 
 <span class="vi">@app.Switch = </span><span class="nx">Switch</span>
 
