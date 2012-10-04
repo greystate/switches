@@ -25,8 +25,7 @@
       var switch1, view1;
       switch1 = new Switch;
       view1 = new SwitchView({
-        model: switch1,
-        className: "switch " + (switch1.get('state'))
+        model: switch1
       });
       return ($('.switchboard')).append(view1.render().el);
     };
@@ -96,6 +95,7 @@
 
     SwitchView.prototype.render = function() {
       this.$el.html(this.template(this.model.toJSON()));
+      this.$el.addClass(this.model.get('state'));
       return this;
     };
 
