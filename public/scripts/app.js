@@ -86,13 +86,13 @@
 
     SwitchView.prototype.className = "switch";
 
-    SwitchView.prototype.template = _.template('<a href="#">Switch <%= state %></a>');
-
     SwitchView.prototype.events = {
       'click a': function() {
         return this.model.toggleState();
       }
     };
+
+    SwitchView.prototype.template = _.template('<a href="#">Switch <%= state %></a>');
 
     SwitchView.prototype.render = function() {
       this.$el.html(this.template(this.model.toJSON()));
