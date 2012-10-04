@@ -66,7 +66,7 @@
     };
 
     Switch.prototype.toggleState = function() {
-      return this.set('state', !this.isOn());
+      return this.set('state', this.isOn() ? 'off' : 'on');
     };
 
     return Switch;

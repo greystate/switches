@@ -6,7 +6,7 @@ class Switch extends Backbone.Model
 	isOn: -> @get('state') is 'on'
 	isOff: -> @get('state') is 'off'
 	
-	toggleState: -> @set 'state', not @isOn()
+	toggleState: -> @set 'state', if @isOn() then 'off' else 'on'
 
 @app.Switch = Switch
 
