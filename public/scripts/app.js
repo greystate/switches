@@ -8,18 +8,7 @@
 
   SwitchBoardController = (function() {
 
-    function SwitchBoardController() {
-      this.setupBoard();
-    }
-
-    SwitchBoardController.prototype.setupBoard = function() {
-      return $('.switchboard').on('click', '.switch a', function() {
-        var $sw;
-        $sw = ($(this)).parent();
-        $sw.toggleClass('off').toggleClass('on');
-        return false;
-      });
-    };
+    function SwitchBoardController() {}
 
     SwitchBoardController.prototype.buildASwitch = function() {
       var switch1, view1;
@@ -92,6 +81,12 @@
     SwitchView.prototype.className = "switch";
 
     SwitchView.prototype.template = _.template('<a href="#">Switch <%= state %></a>');
+
+    SwitchView.prototype.events = {
+      'click a': function() {
+        return this.model.toggleState();
+      }
+    };
 
     SwitchView.prototype.render = function() {
       this.$el.html(this.template(this.model.toJSON()));
