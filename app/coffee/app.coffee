@@ -7,12 +7,15 @@ class SwitchBoardController
 		# Let's create a SwitchBoard right away
 		@setupBoard()
 
-	# Create a SwitchBoard collection and add a single Switch to it
 	setupBoard: ->
+		# Create a SwitchBoard collection
 		board = app.board = new SwitchBoard
+		# and add a single Switch to it
 		board.add new Switch
+		# Create a view for the collection
 		boardView = new SwitchBoardView
 			collection: board
+		# and render that to the page
 		$('body').append boardView.render().el
 		
 
