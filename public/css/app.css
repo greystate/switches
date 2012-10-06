@@ -291,7 +291,8 @@ button {
   left: 25%;
   opacity: 0.3;
 }
-.switch a:hover::after {
+.switch a:hover::after,
+.switch a:focus::after {
   opacity: 0.5;
 }
 .switch:nth-child(3n) {
