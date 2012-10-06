@@ -10,8 +10,18 @@
   SwitchBoardController = (function() {
 
     function SwitchBoardController() {
-      this.buildASwitch();
+      this.setupBoard();
     }
+
+    SwitchBoardController.prototype.setupBoard = function() {
+      var board, boardView;
+      board = app.board = new SwitchBoard;
+      board.add(new Switch);
+      boardView = new SwitchBoardView({
+        collection: board
+      });
+      return $('body').append(boardView.render().el);
+    };
 
     SwitchBoardController.prototype.buildASwitch = function() {
       var switch1, view1;

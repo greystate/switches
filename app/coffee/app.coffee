@@ -4,8 +4,17 @@
 # Main controller for the page's functions
 class SwitchBoardController
 	constructor: ->
-		# Let's add a switch right away
-		@buildASwitch()
+		# Let's create a SwitchBoard right away
+		@setupBoard()
+
+	# Create a SwitchBoard collection and add a single Switch to it
+	setupBoard: ->
+		board = app.board = new SwitchBoard
+		board.add new Switch
+		boardView = new SwitchBoardView
+			collection: board
+		$('body').append boardView.render().el
+		
 
 	# Helper method for showing interaction of model & view
 	buildASwitch: () ->
