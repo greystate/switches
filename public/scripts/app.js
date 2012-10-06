@@ -9,7 +9,9 @@
 
   SwitchBoardController = (function() {
 
-    function SwitchBoardController() {}
+    function SwitchBoardController() {
+      this.buildASwitch();
+    }
 
     SwitchBoardController.prototype.buildASwitch = function() {
       var switch1, view1;

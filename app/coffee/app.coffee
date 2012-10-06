@@ -3,6 +3,9 @@
 
 # Main controller for the page's functions
 class SwitchBoardController
+	constructor: ->
+		# Let's add a switch right away
+		@buildASwitch()
 
 	# Helper method for showing interaction of model & view
 	buildASwitch: () ->
