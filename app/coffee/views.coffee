@@ -1,3 +1,7 @@
+
+#### Views
+
+# View for a `Switch`
 class SwitchView extends Backbone.View
 	initialize: ->
 		# Let me know when my model's `state` attribute changes
@@ -26,6 +30,7 @@ class SwitchView extends Backbone.View
 	stateChanged: (theSwitch, state) =>
 		@$el.removeClass(theSwitch.previous('state')).addClass(state)
 
+# View for the `SwitchBoard` collection
 class SwitchBoardView extends Backbone.View
 	className: "switchboard"
 	
