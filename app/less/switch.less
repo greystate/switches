@@ -30,7 +30,7 @@
 		.border-radius(50%);
 		.box-shadow-inset(-10px, -20px, 30px, rgba(0, 0, 0, 0.5));
 		
-		border: 1px solid #003;
+		border: 1px solid #222;
 		display: block;
 		width: 90%;
 		height: 90%;
@@ -38,8 +38,13 @@
 		text-indent: 100%;
 		overflow: hidden;
 		white-space: nowrap;
-		
-		&:hover { border-color: #334; }
+
+		&:focus, &:hover {
+			.box-shadow-inset(-5px, -10px, 15px, rgba(0, 0, 0, 0.6));
+
+			border-color: #000;
+			outline: none;
+		}
 		
 		&::after {
 			.border-radius(50%);
@@ -60,6 +65,7 @@
 		&:focus::after {
 			opacity: 0.5;
 		}
+		
 	}
 	
 	&:nth-child(3n) { margin-right: 0; }
