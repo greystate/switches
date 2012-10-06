@@ -20,3 +20,4 @@ $ ->
 
 # @codekit-append "models.coffee"
 # @codekit-append "views.coffee"
+# @codekit-append "collections.coffee"
