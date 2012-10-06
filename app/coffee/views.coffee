@@ -26,4 +26,14 @@ class SwitchView extends Backbone.View
 	stateChanged: (theSwitch, state) =>
 		@$el.removeClass(theSwitch.previous('state')).addClass(state)
 
+class SwitchBoardView extends Backbone.View
+	className: "switchboard"
+	
+	render: ->
+		@collection.each (swatch) =>
+			@$el.append new SwitchView(model: swatch).render().el
+		@
+
+
 @app.SwitchView = SwitchView
+@app.SwitchBoardView = SwitchBoardView
