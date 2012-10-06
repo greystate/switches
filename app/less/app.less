@@ -7,9 +7,21 @@ body {
 
 button {
 	.centered;
-
+	.linear-gradient(top, #fff, #cdcdcd);
+	.border-radius(4px);
+	
 	margin-top: 1em;
 	display: block;
+	padding: 4px 10px;
+	border: 1px solid #666;
+	
+	&:focus {
+		.box-shadow(0, 0, 8px, hsla(50, 90%, 35%, 0.9));
+		
+		border-color: #000;
+		outline: none;
+	}
+	
 }
 
 @import "switch.less";

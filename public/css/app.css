@@ -200,8 +200,28 @@ body {
 }
 button {
   margin: 0 auto;
+  background: #ffffff;
+  background: -webkit-linear-gradient(top, #ffffff, #cdcdcd);
+  background: -moz-linear-gradient(top, #ffffff, #cdcdcd);
+  background: -ms-linear-gradient(top, #ffffff, #cdcdcd);
+  background: -o-linear-gradient(top, #ffffff, #cdcdcd);
+  background: linear-gradient(top, #ffffff, #cdcdcd);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
   margin-top: 1em;
   display: block;
+  padding: 4px 10px;
+  border: 1px solid #666;
+}
+button:focus {
+  -webkit-box-shadow: 0 0 8px rgba(170, 143, 9, 0.9);
+  -moz-box-shadow: 0 0 8px rgba(170, 143, 9, 0.9);
+  box-shadow: 0 0 8px rgba(170, 143, 9, 0.9);
+  border-color: #000;
+  outline: none;
 }
 .switchboard {
   margin: 0 auto;
