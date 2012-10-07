@@ -83,13 +83,15 @@
     __extends(SwitchView, _super);
 
     function SwitchView() {
+      this.colorChanged = __bind(this.colorChanged, this);
+
       this.stateChanged = __bind(this.stateChanged, this);
       return SwitchView.__super__.constructor.apply(this, arguments);
     }
 
     SwitchView.prototype.initialize = function() {
       this.model.on('change:state', this.stateChanged);
-      return this.model.on('change:color', this.render, this);
+      return this.model.on('change:color', this.colorChanged);
     };
 
     SwitchView.prototype.className = "switch";
@@ -105,12 +107,16 @@
     SwitchView.prototype.render = function() {
       this.$el.html(this.template(this.model.toJSON()));
       this.$el.addClass(this.model.get('state'));
-      this.$el.addClass("switch-color-" + (this.model.get('color')));
+      this.$el.addClass(this.model.get('color'));
       return this;
     };
 
     SwitchView.prototype.stateChanged = function(theSwitch, state) {
       return this.$el.removeClass(theSwitch.previous('state')).addClass(state);
+    };
+
+    SwitchView.prototype.colorChanged = function(theSwitch, color) {
+      return this.$el.removeClass(theSwitch.previous('color')).addClass(color);
     };
 
     return SwitchView;
