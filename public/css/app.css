@@ -323,8 +323,14 @@ button:focus {
 .switch:nth-child(3n) {
   margin-right: 0;
 }
-.switch.on a {
+.switch.switch-color-red.on a {
   background-color: rgba(255, 0, 0, 0.8);
+}
+.switch.switch-color-green.on a {
+  background-color: rgba(0, 255, 0, 0.8);
+}
+.switch.switch-color-orange.on a {
+  background-color: rgba(255, 128, 0, 0.8);
 }
 .switch.off a {
   background-color: rgba(100, 100, 100, 0.3);

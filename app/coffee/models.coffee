@@ -1,6 +1,6 @@
 class Switch extends Backbone.Model
 	defaults:
-		color: "rgba(255, 0, 0, 0.8)"
+		color: 'red'
 		state: 'on'
 	
 	isOn: -> @get('state') is 'on'

@@ -50,7 +50,7 @@
     }
 
     Switch.prototype.defaults = {
-      color: "rgba(255, 0, 0, 0.8)",
+      color: 'red',
       state: 'on'
     };
 
@@ -88,7 +88,8 @@
     }
 
     SwitchView.prototype.initialize = function() {
-      return this.model.on('change:state', this.stateChanged);
+      this.model.on('change:state', this.stateChanged);
+      return this.model.on('change:color', this.render, this);
     };
 
     SwitchView.prototype.className = "switch";
@@ -104,6 +105,7 @@
     SwitchView.prototype.render = function() {
       this.$el.html(this.template(this.model.toJSON()));
       this.$el.addClass(this.model.get('state'));
+      this.$el.addClass("switch-color-" + (this.model.get('color')));
       return this;
     };
 

@@ -7,6 +7,7 @@ class SwitchView extends Backbone.View
 		# Let me know when my model's `state` attribute changes
 		# and call my `stateChanged()` method when it does
 		@model.on 'change:state', @stateChanged
+		@model.on 'change:color', @render, @
 	
 	className: "switch"
 	
@@ -24,8 +25,9 @@ class SwitchView extends Backbone.View
 	render: ->
 		@$el.html @template @model.toJSON()
 		@$el.addClass @model.get 'state'
+		@$el.addClass "switch-color-#{@model.get 'color'}"
 		@
-	
+
 	# This is called when the Switch model changes state
 	stateChanged: (theSwitch, state) =>
 		@$el.removeClass(theSwitch.previous('state')).addClass(state)
