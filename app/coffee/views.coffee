@@ -32,9 +32,14 @@ class SwitchView extends Backbone.View
 
 # View for the `SwitchBoard` collection
 class SwitchBoardView extends Backbone.View
+	initialize: ->
+		@collection.on 'add', @render, @
+	
 	className: "switchboard"
 	
 	render: ->
+		# Clear the contents before building the view
+		@$el.html ''
 		@collection.each (swatch) =>
 			@$el.append new SwitchView(model: swatch).render().el
 		@

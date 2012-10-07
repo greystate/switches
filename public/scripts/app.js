@@ -123,10 +123,15 @@
       return SwitchBoardView.__super__.constructor.apply(this, arguments);
     }
 
+    SwitchBoardView.prototype.initialize = function() {
+      return this.collection.on('add', this.render, this);
+    };
+
     SwitchBoardView.prototype.className = "switchboard";
 
     SwitchBoardView.prototype.render = function() {
       var _this = this;
+      this.$el.html('');
       this.collection.each(function(swatch) {
         return _this.$el.append(new SwitchView({
           model: swatch
