@@ -17,19 +17,14 @@
       var board, boardView;
       board = app.board = new SwitchBoard;
       board.add(new Switch);
-      boardView = new SwitchBoardView({
+      boardView = app.boardView = new SwitchBoardView({
         collection: board
       });
       return $('body').append(boardView.render().el);
     };
 
     SwitchBoardController.prototype.buildASwitch = function() {
-      var switch1, view1;
-      switch1 = new Switch;
-      view1 = new SwitchView({
-        model: switch1
-      });
-      return ($('.switchboard')).append(view1.render().el);
+      return app.board.add();
     };
 
     return SwitchBoardController;

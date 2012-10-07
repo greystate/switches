@@ -13,18 +13,15 @@ class SwitchBoardController
 		# and add a single Switch to it
 		board.add new Switch
 		# Create a view for the collection
-		boardView = new SwitchBoardView
+		boardView = app.boardView = new SwitchBoardView
 			collection: board
 		# and render that to the page
 		$('body').append boardView.render().el
 		
 
-	# Helper method for showing interaction of model & view
+	# Helper method for adding new switches
 	buildASwitch: () ->
-		switch1 = new Switch
-		view1 = new SwitchView
-			model: switch1
-		($ '.switchboard').append view1.render().el
+		app.board.add()
 
 # Start everything when the page is ready
 $ ->
