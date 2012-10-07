@@ -16,7 +16,7 @@
     SwitchBoardController.prototype.setupBoard = function() {
       var board, boardView;
       board = app.board = new SwitchBoard;
-      board.add();
+      board.fetch();
       boardView = app.boardView = new SwitchBoardView({
         collection: board
       });
@@ -171,6 +171,8 @@
     }
 
     SwitchBoard.prototype.model = Switch;
+
+    SwitchBoard.prototype.localStorage = new Backbone.LocalStorage("SwitchBoardStore");
 
     return SwitchBoard;
 

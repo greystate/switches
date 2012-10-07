@@ -11,7 +11,7 @@ class SwitchBoardController
 		# Create a SwitchBoard collection
 		board = app.board = new SwitchBoard
 		# and add a single Switch to it
-		board.add()
+		board.fetch()
 		# Create a view for the collection
 		boardView = app.boardView = new SwitchBoardView
 			collection: board
