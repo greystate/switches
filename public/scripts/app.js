@@ -16,7 +16,7 @@
     SwitchBoardController.prototype.setupBoard = function() {
       var board, boardView;
       board = app.board = new SwitchBoard;
-      board.add(new Switch);
+      board.add();
       boardView = app.boardView = new SwitchBoardView({
         collection: board
       });
