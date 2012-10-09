@@ -114,6 +114,11 @@
       'click a': function(event) {
         event.preventDefault();
         return this.model.toggleState();
+      },
+      'keypress a': function(event) {
+        if (event.keyCode === 99) {
+          return this.model.cycleColor();
+        }
       }
     };
 
