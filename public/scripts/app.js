@@ -49,8 +49,10 @@
       return Switch.__super__.constructor.apply(this, arguments);
     }
 
+    Switch.COLORS = ["red", "green", "orange"];
+
     Switch.prototype.defaults = {
-      color: 'red',
+      color: Switch.COLORS[0],
       state: 'on'
     };
 
@@ -64,6 +66,18 @@
 
     Switch.prototype.toggleState = function() {
       return this.set('state', this.isOn() ? 'off' : 'on');
+    };
+
+    Switch.prototype.cycleColor = function() {
+      var colors, currentColor, index, newColor, _i, _ref1;
+      colors = Switch.COLORS;
+      currentColor = this.get('color');
+      for (index = _i = 0, _ref1 = colors.length; 0 <= _ref1 ? _i < _ref1 : _i > _ref1; index = 0 <= _ref1 ? ++_i : --_i) {
+        if (colors[index] === currentColor) {
+          newColor = colors[index === colors.length - 1 ? 0 : index + 1];
+        }
+      }
+      return this.set('color', newColor);
     };
 
     return Switch;
