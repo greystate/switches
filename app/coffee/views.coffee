@@ -18,6 +18,10 @@ class SwitchView extends Backbone.View
 			event.preventDefault()
 			@model.toggleState()
 
+		# Pressing the 'c' key when a switch has focus, cycles the color
+		'keypress a': (event) ->
+			@model.cycleColor() if event.keyCode is 99 # 'c'
+
 	#### Rendering
 	# The template
 	template: _.template '''
