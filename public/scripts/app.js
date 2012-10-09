@@ -24,7 +24,7 @@
     };
 
     SwitchBoardController.prototype.buildASwitch = function() {
-      return app.board.add();
+      return app.board.create();
     };
 
     return SwitchBoardController;

@@ -21,7 +21,7 @@ class SwitchBoardController
 
 	# Helper method for adding new switches
 	buildASwitch: () ->
-		app.board.add()
+		app.board.create() # Saves right away
 
 # Start everything when the page is ready
 $ ->
