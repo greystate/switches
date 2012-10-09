@@ -1,12 +1,22 @@
 <!DOCTYPE html>  <html> <head>   <title>models.coffee</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>            <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">                                           <a class="source" href="app.html">                 app.coffee               </a>                                           <a class="source" href="collections.html">                 collections.coffee               </a>                                           <a class="source" href="models.html">                 models.coffee               </a>                                           <a class="source" href="views.html">                 views.coffee               </a>                        </div>         </div>       </div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               models.coffee             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-1">&#182;</a>               </div>                            </td>             <td class="code">               <div class="highlight"><pre><span class="k">class</span> <span class="nx">Switch</span> <span class="k">extends</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span>
+	<span class="vi">@COLORS = </span><span class="p">[</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;green&quot;</span><span class="p">,</span> <span class="s">&quot;orange&quot;</span> <span class="p">]</span>
+	
 	<span class="nv">defaults:</span>
-		<span class="nv">color: </span><span class="s">&quot;rgba(255, 0, 0, 0.8)&quot;</span>
+		<span class="nv">color: </span><span class="nx">@COLORS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 		<span class="nv">state: </span><span class="s">&#39;on&#39;</span>
 	
 	<span class="nv">isOn: </span><span class="o">-&gt;</span> <span class="nx">@get</span><span class="p">(</span><span class="s">&#39;state&#39;</span><span class="p">)</span> <span class="o">is</span> <span class="s">&#39;on&#39;</span>
 	<span class="nv">isOff: </span><span class="o">-&gt;</span> <span class="nx">@get</span><span class="p">(</span><span class="s">&#39;state&#39;</span><span class="p">)</span> <span class="o">is</span> <span class="s">&#39;off&#39;</span>
 	
 	<span class="nv">toggleState: </span><span class="o">-&gt;</span> <span class="nx">@set</span> <span class="s">&#39;state&#39;</span><span class="p">,</span> <span class="k">if</span> <span class="nx">@isOn</span><span class="p">()</span> <span class="k">then</span> <span class="s">&#39;off&#39;</span> <span class="k">else</span> <span class="s">&#39;on&#39;</span>
+
+	<span class="nv">cycleColor: </span><span class="o">-&gt;</span>
+		<span class="nv">colors = </span><span class="nx">Switch</span><span class="p">.</span><span class="nx">COLORS</span>
+		<span class="nv">currentColor = </span><span class="nx">@get</span> <span class="s">&#39;color&#39;</span>
+		<span class="k">for</span> <span class="nx">index</span> <span class="k">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">...</span><span class="nx">colors</span><span class="p">.</span><span class="nx">length</span><span class="p">]</span>
+			<span class="k">if</span> <span class="nx">colors</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">is</span> <span class="nx">currentColor</span>
+				<span class="nv">newColor = </span><span class="nx">colors</span><span class="p">[</span><span class="k">if</span> <span class="nx">index</span> <span class="o">is</span> <span class="nx">colors</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="k">then</span> <span class="mi">0</span> <span class="k">else</span> <span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+		<span class="nx">@set</span> <span class="s">&#39;color&#39;</span><span class="p">,</span> <span class="nx">newColor</span>
 
 <span class="vi">@app.Switch = </span><span class="nx">Switch</span>
 
