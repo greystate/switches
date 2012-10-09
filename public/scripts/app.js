@@ -97,7 +97,8 @@
     SwitchView.prototype.className = "switch";
 
     SwitchView.prototype.events = {
-      'click a': function() {
+      'click a': function(event) {
+        event.preventDefault();
         return this.model.toggleState();
       }
     };

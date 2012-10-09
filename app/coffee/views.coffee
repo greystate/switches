@@ -14,7 +14,9 @@ class SwitchView extends Backbone.View
 	# Events in the View
 	events:
 		# Clicking the switch delegates the message to the model
-		'click a': -> @model.toggleState()
+		'click a': (event) ->
+			event.preventDefault()
+			@model.toggleState()
 
 	#### Rendering
 	# The template
