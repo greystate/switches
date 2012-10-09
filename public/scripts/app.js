@@ -118,10 +118,7 @@
       'keypress a': function(event) {
         switch (event.keyCode) {
           case 99:
-            if (event.keyCode === 99) {
-              return this.model.cycleColor();
-            }
-            break;
+            return this.model.cycleColor();
           case 32:
             return this.model.toggleState();
         }

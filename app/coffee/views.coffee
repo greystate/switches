@@ -23,7 +23,7 @@ class SwitchView extends Backbone.View
 		'keypress a': (event) ->
 			switch event.keyCode
 				when 99 # c
-					@model.cycleColor() if event.keyCode is 99 
+					@model.cycleColor()
 				when 32 # SPACE
 					@model.toggleState()
 
