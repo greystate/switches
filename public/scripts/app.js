@@ -116,8 +116,14 @@
         return this.model.toggleState();
       },
       'keypress a': function(event) {
-        if (event.keyCode === 99) {
-          return this.model.cycleColor();
+        switch (event.keyCode) {
+          case 99:
+            if (event.keyCode === 99) {
+              return this.model.cycleColor();
+            }
+            break;
+          case 32:
+            return this.model.toggleState();
         }
       }
     };
