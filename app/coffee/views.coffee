@@ -19,8 +19,13 @@ class SwitchView extends Backbone.View
 			@model.toggleState()
 
 		# Pressing the 'c' key when a switch has focus, cycles the color
+		# Pressing the spacebar toggles state
 		'keypress a': (event) ->
-			@model.cycleColor() if event.keyCode is 99 # 'c'
+			switch event.keyCode
+				when 99 # c
+					@model.cycleColor() if event.keyCode is 99 
+				when 32 # SPACE
+					@model.toggleState()
 
 	#### Rendering
 	# The template
