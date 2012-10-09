@@ -74,7 +74,7 @@
       currentColor = this.get('color');
       for (index = _i = 0, _ref1 = colors.length; 0 <= _ref1 ? _i < _ref1 : _i > _ref1; index = 0 <= _ref1 ? ++_i : --_i) {
         if (colors[index] === currentColor) {
-          newColor = colors[index === colors.length - 1 ? 0 : index + 1];
+          newColor = colors[(index + 1) * (index !== colors.length - 1)];
         }
       }
       return this.set('color', newColor);

@@ -15,7 +15,7 @@ class Switch extends Backbone.Model
 		currentColor = @get 'color'
 		for index in [0...colors.length]
 			if colors[index] is currentColor
-				newColor = colors[if index is colors.length - 1 then 0 else index + 1]
+				newColor = colors[(index + 1) * (index isnt colors.length - 1)]
 		@set 'color', newColor
 
 @app.Switch = Switch
