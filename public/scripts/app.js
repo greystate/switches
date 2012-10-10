@@ -190,14 +190,22 @@
     __extends(SwitchBoard, _super);
 
     function SwitchBoard() {
-      this.saveConfiguration = __bind(this.saveConfiguration, this);
       return SwitchBoard.__super__.constructor.apply(this, arguments);
     }
 
     SwitchBoard.prototype.model = Switch;
 
-    SwitchBoard.prototype.saveConfiguration = function() {
+    SwitchBoard.prototype.keep = function() {
       return this.invoke('save');
+    };
+
+    SwitchBoard.prototype.wipe = function() {
+      var _results;
+      _results = [];
+      while (this.length !== 0) {
+        _results.push((this.at(0)).destroy());
+      }
+      return _results;
     };
 
     SwitchBoard.prototype.localStorage = new Backbone.LocalStorage("SwitchBoardStore");
